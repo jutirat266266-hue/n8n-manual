@@ -25,21 +25,20 @@
 
             <div class="flex items-center gap-3 sm:gap-6">
                 <nav class="hidden md:flex items-center gap-4 text-sm font-medium text-slate-600">
-                    <a href="#about" class="hover:text-[#EA4B71] transition-colors">เกี่ยวกับ n8n</a>
-                    <a href="#install" class="hover:text-[#EA4B71] transition-colors">วิธีติดตั้ง</a>
-                    <a href="#manual" class="px-3 py-1.5 bg-rose-50 text-[#EA4B71] rounded-lg font-semibold">คู่มือการใช้งาน</a>
-                    <a href="#faq" class="hover:text-[#EA4B71] transition-colors">คำถามที่พบบ่อย (FAQ)</a>
+                    <a href="#topic-1" class="hover:text-[#EA4B71] transition-colors">เกี่ยวกับ n8n</a>
+                    <a href="#topic-2" class="hover:text-[#EA4B71] transition-colors">วิธีติดตั้ง</a>
+                    <a href="#topic-4" class="px-3 py-1.5 bg-rose-50 text-[#EA4B71] rounded-lg font-semibold">คู่มือการใช้งาน</a>
+                    <a href="#topic-8" class="hover:text-[#EA4B71] transition-colors">คำถามที่พบบ่อย (FAQ)</a>
                 </nav>
 
-                <!-- ปุ่มเปิดเว็บแอปตรง ไม่ขึ้นเตือนความปลอดภัย -->
-                <a href="https://n8n-ai-scaner.web.app/" 
-                   target="_blank" 
-                   class="px-4 py-2 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-sm font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-1.5 whitespace-nowrap">
+                <!-- ปุ่มเปิดเว็บตรงด้วย JavaScript เพื่อเลี่ยง Security Warning และกดได้ 100% -->
+                <button onclick="window.location.href='https://n8n-ai-scaner.web.app/';" 
+                        class="px-4 py-2 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-sm font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-1.5 whitespace-nowrap cursor-pointer z-10">
                     <span>ไปยัง เว็บไซต์ n8n</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                     </svg>
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -52,18 +51,18 @@
             <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm sticky top-24 space-y-1">
                 <p class="text-xs font-semibold text-slate-400 px-3 py-2 uppercase tracking-wider">หัวข้อใหญ่ในหน้านี้</p>
                 <nav class="space-y-1 text-xs sm:text-sm font-medium">
-                    <a href="#topic-1" class="block px-3 py-2 rounded-xl bg-rose-50 text-[#EA4B71] font-semibold">1. n8n คืออะไร? & สถาปัตยกรรม</a>
-                    <a href="#topic-2" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">2. คำศัพท์ & ส่วนประกอบเมนู</a>
-                    <a href="#topic-3" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">3. เริ่มต้นใช้งาน Workspace</a>
-                    <a href="#topic-4" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">4. สร้าง Workflow แรก (Step-by-Step)</a>
-                    <a href="#topic-5" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">5. เจาะลึกชนิด Trigger Node</a>
-                    <a href="#topic-6" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">6. โครงสร้าง Action & Logic Node</a>
-                    <a href="#topic-7" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">7. การแมปข้อมูล & Expression</a>
-                    <a href="#topic-8" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">8. วิธีทดสอบ & ตรวจ Error</a>
-                    <a href="#topic-9" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">9. การตั้งเวลาอัตโนมัติ</a>
-                    <a href="#topic-10" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">10. ระบบ Error Handling</a>
-                    <a href="#topic-11" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">11. การเชื่อมต่อ Webhook Node</a>
-                    <a href="#topic-12" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">12. การเปิดใช้งานจริง (Active)</a>
+                    <a href="#topic-1" class="block px-3 py-2 rounded-xl bg-rose-50 text-[#EA4B71] font-semibold cursor-pointer">1. n8n คืออะไร? & สถาปัตยกรรม</a>
+                    <a href="#topic-2" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">2. คำศัพท์ & ส่วนประกอบเมนู</a>
+                    <a href="#topic-3" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">3. เริ่มต้นใช้งาน Workspace</a>
+                    <a href="#topic-4" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">4. สร้าง Workflow แรก (Step-by-Step)</a>
+                    <a href="#topic-5" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">5. เจาะลึกชนิด Trigger Node</a>
+                    <a href="#topic-6" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">6. โครงสร้าง Action & Logic Node</a>
+                    <a href="#topic-7" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">7. การแมปข้อมูล & Expression</a>
+                    <a href="#topic-8" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">8. วิธีทดสอบ & ตรวจ Error</a>
+                    <a href="#topic-9" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">9. การตั้งเวลาอัตโนมัติ</a>
+                    <a href="#topic-10" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">10. ระบบ Error Handling</a>
+                    <a href="#topic-11" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">11. การเชื่อมต่อ Webhook Node</a>
+                    <a href="#topic-12" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71] cursor-pointer">12. การเปิดใช้งานจริง (Active)</a>
                 </nav>
             </div>
         </aside>
@@ -86,14 +85,13 @@
                             <p class="text-xs text-slate-500 mt-0.5">ระบบสแกนและประมวลผลข้อมูลเอกสารอัตโนมัติด้วย AI Workflow</p>
                         </div>
                     </div>
-                    <a href="https://n8n-ai-scaner.web.app/" 
-                       target="_blank" 
-                       class="w-full sm:w-auto text-center px-5 py-2 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-xs font-medium rounded-xl shadow transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+                    <button onclick="window.location.href='https://n8n-ai-scaner.web.app/';" 
+                            class="w-full sm:w-auto text-center px-5 py-2.5 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-xs font-medium rounded-xl shadow transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer z-10">
                         <span>ไปยัง เว็บไซต์ n8n</span>
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -110,7 +108,7 @@
                     <div class="space-y-3 pl-2">
                         <div class="flex items-start gap-3">
                             <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
-                            <p class="text-xs sm:text-sm text-slate-700">กดปุ่ม <strong class="+ Add first step">+ Add first step</strong> บน Canvas ➔ เลือก <strong>When clicking 'Test workflow'</strong> (Manual Trigger)</p>
+                            <p class="text-xs sm:text-sm text-slate-700">กดปุ่ม <strong class="text-rose-600">+ Add first step</strong> บน Canvas ➔ เลือก <strong>When clicking 'Test workflow'</strong> (Manual Trigger)</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
