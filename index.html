@@ -515,3 +515,40 @@ Node ล้มเหลว: {{ $json.execution.error.node.name }}
 
 </body>
 </html>
+<!-- Container การ์ดแนะนำเว็บไซต์พร้อมรูป Node -->
+<div class="max-w-2xl mx-auto my-8 p-6 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
+  
+  <!-- ส่วนแสดงตัวอย่าง Node -->
+  <div class="flex items-center gap-4 p-4 mb-5 bg-slate-50 rounded-xl border border-slate-200">
+    <!-- Icon ของ Node n8n -->
+    <div class="w-12 h-12 flex items-center justify-center bg-[#FF6D5A] text-white rounded-xl shadow-md font-bold text-xl flex-shrink-0">
+      ⚡
+    </div>
+    <div class="flex-grow">
+      <div class="flex items-center gap-2">
+        <h4 class="font-bold text-slate-800 text-base">n8n AI Scanner Node</h4>
+        <span class="text-[10px] px-2 py-0.5 bg-emerald-100 text-emerald-700 font-medium rounded-full">Active</span>
+      </div>
+      <p class="text-xs text-slate-500 mt-0.5">ระบบสแกนและประมวลผลข้อมูลเอกสารด้วย AI Workflow</p>
+    </div>
+  </div>
+
+  <!-- ข้อความกำกับและปุ่มลิงก์ -->
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-sm text-slate-600 text-center sm:text-left">
+      กดที่ปุ่มเพื่อเปิดไปยังหน้าเว็บแอปพลิเคชัน n8n AI Scanner
+    </p>
+
+    <!-- ปุ่มสีชมพู Coral ตามรูปภาพ -->
+    <a href="https://n8n-ai-scaner.web.app/" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#EA4B71] hover:bg-[#d63d61] text-white font-medium text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform active:scale-95 whitespace-nowrap">
+      <span>ไปยัง เว็บไซต์ n8n</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
