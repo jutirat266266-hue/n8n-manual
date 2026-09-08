@@ -13,7 +13,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-    <!-- Header / Navbar -->
+    <!-- ================= 1. HEADER / NAVBAR ================= -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -31,7 +31,7 @@
                     <a href="#faq" class="hover:text-[#EA4B71] transition-colors">คำถามที่พบบ่อย (FAQ)</a>
                 </nav>
 
-                <!-- ปุ่มไปยังเว็บไซต์ n8n (ไม่มี rel=noopener เพื่อไม่ให้เด้งเตือนความปลอดภัย) -->
+                <!-- ปุ่มเปิดเว็บแอปตรง ไม่ขึ้นเตือนความปลอดภัย -->
                 <a href="https://n8n-ai-scaner.web.app/" 
                    target="_blank" 
                    class="px-4 py-2 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-sm font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-1.5 whitespace-nowrap">
@@ -44,76 +44,106 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-8 space-y-8">
+    <!-- ================= 2. MAIN LAYOUT WITH SIDEBAR ================= -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full flex flex-col md:flex-row gap-8">
+        
+        <!-- SIDEBAR (12 หัวข้อเดิม) -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm sticky top-24 space-y-1">
+                <p class="text-xs font-semibold text-slate-400 px-3 py-2 uppercase tracking-wider">หัวข้อใหญ่ในหน้านี้</p>
+                <nav class="space-y-1 text-xs sm:text-sm font-medium">
+                    <a href="#topic-1" class="block px-3 py-2 rounded-xl bg-rose-50 text-[#EA4B71] font-semibold">1. n8n คืออะไร? & สถาปัตยกรรม</a>
+                    <a href="#topic-2" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">2. คำศัพท์ & ส่วนประกอบเมนู</a>
+                    <a href="#topic-3" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">3. เริ่มต้นใช้งาน Workspace</a>
+                    <a href="#topic-4" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">4. สร้าง Workflow แรก (Step-by-Step)</a>
+                    <a href="#topic-5" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">5. เจาะลึกชนิด Trigger Node</a>
+                    <a href="#topic-6" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">6. โครงสร้าง Action & Logic Node</a>
+                    <a href="#topic-7" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">7. การแมปข้อมูล & Expression</a>
+                    <a href="#topic-8" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">8. วิธีทดสอบ & ตรวจ Error</a>
+                    <a href="#topic-9" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">9. การตั้งเวลาอัตโนมัติ</a>
+                    <a href="#topic-10" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">10. ระบบ Error Handling</a>
+                    <a href="#topic-11" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">11. การเชื่อมต่อ Webhook Node</a>
+                    <a href="#topic-12" class="block px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 hover:text-[#EA4B71]">12. การเปิดใช้งานจริง (Active)</a>
+                </nav>
+            </div>
+        </aside>
 
-        <!-- Banner Node Preview & Direct Link -->
-        <section>
-            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-rose-100 border border-rose-200 text-[#EA4B71] rounded-xl flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-inner">
+        <!-- MAIN CONTENT AREA -->
+        <main class="flex-1 space-y-8 min-w-0">
+
+            <!-- Banner การ์ด Node จริง + ปุ่มกดเข้าเว็บ -->
+            <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 bg-rose-100 border border-rose-200 text-[#EA4B71] rounded-xl flex items-center justify-center text-xl font-bold flex-shrink-0">
                             ⚡
                         </div>
                         <div>
                             <div class="flex items-center gap-2">
-                                <h3 class="text-base font-bold text-slate-800">n8n AI Scanner Node</h3>
-                                <span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-200">
-                                    Active
-                                </span>
+                                <h3 class="text-sm font-bold text-slate-800">n8n AI Scanner Node</h3>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] font-semibold rounded-full">Active</span>
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-500 mt-1">
-                                ระบบสแกนและประมวลผลข้อมูลเอกสารอัตโนมัติด้วย AI Workflow
-                            </p>
+                            <p class="text-xs text-slate-500 mt-0.5">ระบบสแกนและประมวลผลข้อมูลเอกสารอัตโนมัติด้วย AI Workflow</p>
+                        </div>
+                    </div>
+                    <a href="https://n8n-ai-scaner.web.app/" 
+                       target="_blank" 
+                       class="w-full sm:w-auto text-center px-5 py-2 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-xs font-medium rounded-xl shadow transition-all duration-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+                        <span>ไปยัง เว็บไซต์ n8n</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- เนื้อหาคู่มือตามโครงสร้างเดิม -->
+            <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-8">
+                
+                <!-- หัวข้อที่ 4 -->
+                <div id="topic-4" class="space-y-4">
+                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">
+                        4. สร้าง Workflow แรก (Step-by-Step)
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600">ทดลองสร้าง Workflow เพื่อส่งและแปลงข้อมูลข้อความอย่างง่าย:</p>
+                    
+                    <div class="space-y-3 pl-2">
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <p class="text-xs sm:text-sm text-slate-700">กดปุ่ม <strong class="+ Add first step">+ Add first step</strong> บน Canvas ➔ เลือก <strong>When clicking 'Test workflow'</strong> (Manual Trigger)</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <p class="text-xs sm:text-sm text-slate-700">คลิกจุดวงกลม Output ฝั่งขวาของ Manual Trigger ลากสายเชื่อมต่อออกมา แล้วพิมพ์ค้นหา <strong>Edit Fields (Set)</strong></p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div class="text-xs sm:text-sm text-slate-700 space-y-1">
+                                <p>ในหน้าต่างตั้งค่า Edit Fields ให้กำหนดค่าดังนี้:</p>
+                                <ul class="list-disc list-inside pl-4 text-slate-600 space-y-1 mt-1">
+                                    <li>ในหัวข้อ <strong>Fields to Set</strong> กดปุ่ม <strong>+ Add Field</strong> ➔ เลือก <strong>String</strong></li>
+                                    <li>ช่อง <strong>Name</strong> ใส่คำว่า: <code class="bg-slate-100 px-1.5 py-0.5 rounded text-rose-600 font-mono">project_name</code></li>
+                                    <li>ช่อง <strong>Value</strong> ใส่คำว่า: <code class="bg-slate-100 px-1.5 py-0.5 rounded text-rose-600 font-mono">n8n OCR System</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">7</span>
+                            <p class="text-xs sm:text-sm text-slate-700">กดปุ่ม <strong>Execute Node</strong> ด้านขวาบน ผลลัพธ์ในฝั่ง Output จะแสดงข้อมูล JSON:</p>
                         </div>
                     </div>
 
-                    <div class="w-full md:w-auto flex items-center gap-3 border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
-                        <a href="https://n8n-ai-scaner.web.app/" 
-                           target="_blank" 
-                           class="w-full sm:w-auto text-center px-6 py-2.5 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-sm font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
-                            <span>ไปยัง เว็บไซต์ n8n</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </a>
+                    <!-- กล่องแสดงโค้ด JSON -->
+                    <div class="bg-[#1E1215] text-rose-200 p-4 rounded-xl font-mono text-xs sm:text-sm shadow-inner overflow-x-auto">
+                        <pre><code>{
+  <span class="text-rose-400">"project_name"</span>: <span class="text-amber-300">"n8n OCR System"</span>
+}</code></pre>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- คู่มือการใช้งาน -->
-        <section id="manual" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
-            <h1 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">
-                📖 คู่มือการใช้งาน n8n Beginner's Guide
-            </h1>
-            
-            <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
-                <p>
-                    ยินดีต้อนรับสู่คู่มือการใช้งานระบบ Workflow Automation ด้วย n8n สำหรับเริ่มต้น คุณสามารถศึกษาเรียนรู้การใช้งาน Node ต่างๆ Triggers และการตรวจสอบการทำงานของระบบได้จากหัวข้อด้านล่างนี้
-                </p>
-
-                <!-- รายการขั้นตอน -->
-                <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-3 mt-6">
-                    <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
-                        <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold">4</span>
-                        การตรวจสอบประวัติการรัน (Executions)
-                    </h3>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600 pl-2">
-                        <li class="flex items-start gap-2">
-                            <span class="w-5 h-5 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
-                            <span>ไปที่เมนู <strong class="text-slate-800">"Executions"</strong> ที่แถบฝั่งซ้ายมือ</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-5 h-5 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">6</span>
-                            <span>ระบบจะแสดงรายการการทำงานทั้งหมดย้อนหลัง สามารถคลิกเลือกดูรายการย่อยเพื่อตรวจสอบค่า Input/Output ของทุก Node ในรอบที่เกิดปัญหาได้อย่างแม่นยำ</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-    </main>
+            </section>
+        </main>
+    </div>
 
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
         <p>© 2026 n8n Manual Guide. All rights reserved.</p>
