@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>n8n Manual & Documentation Guide</title>
-    <!-- Tailwind CSS -->
+    <title>n8n Beginner's Guide & Manual</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -13,10 +13,9 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-    <!-- ================= 1. HEADER / NAVBAR ================= -->
+    <!-- Header / Navbar -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Logo -->
             <div class="flex items-center gap-3">
                 <div class="w-9 h-9 bg-[#EA4B71] rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md">
                     n8n
@@ -24,7 +23,6 @@
                 <span class="font-bold text-xl text-slate-800 tracking-tight">n8n Manual</span>
             </div>
 
-            <!-- Navigation Links & Action Button -->
             <div class="flex items-center gap-3 sm:gap-6">
                 <nav class="hidden md:flex items-center gap-4 text-sm font-medium text-slate-600">
                     <a href="#about" class="hover:text-[#EA4B71] transition-colors">เกี่ยวกับ n8n</a>
@@ -33,10 +31,9 @@
                     <a href="#faq" class="hover:text-[#EA4B71] transition-colors">คำถามที่พบบ่อย (FAQ)</a>
                 </nav>
 
-                <!-- ปุ่มบน Header ตามรูปภาพ -->
+                <!-- ปุ่มไปยังเว็บไซต์ n8n (ไม่มี rel=noopener เพื่อไม่ให้เด้งเตือนความปลอดภัย) -->
                 <a href="https://n8n-ai-scaner.web.app/" 
                    target="_blank" 
-                   rel="noopener noreferrer" 
                    class="px-4 py-2 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-sm font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-1.5 whitespace-nowrap">
                     <span>ไปยัง เว็บไซต์ n8n</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,15 +44,13 @@
         </div>
     </header>
 
-    <!-- ================= 2. MAIN CONTENT ================= -->
+    <!-- Main Content -->
     <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-8 space-y-8">
 
-        <!-- Banner การ์ดแนะนำ Node & ปุ่มกดเชื่อมโยงไปยัง n8n AI Scanner -->
+        <!-- Banner Node Preview & Direct Link -->
         <section>
             <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                    
-                    <!-- ส่วนพรีวิว Node -->
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-rose-100 border border-rose-200 text-[#EA4B71] rounded-xl flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow-inner">
                             ⚡
@@ -73,11 +68,9 @@
                         </div>
                     </div>
 
-                    <!-- ปุ่มกดเข้าสู่แอปพลิเคชัน -->
-                    <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3 border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
+                    <div class="w-full md:w-auto flex items-center gap-3 border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
                         <a href="https://n8n-ai-scaner.web.app/" 
                            target="_blank" 
-                           rel="noopener noreferrer" 
                            class="w-full sm:w-auto text-center px-6 py-2.5 bg-[#EA4B71] hover:bg-[#d63d61] text-white text-sm font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
                             <span>ไปยัง เว็บไซต์ n8n</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,12 +78,11 @@
                             </svg>
                         </a>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ส่วนเนื้อหาคู่มือการใช้งาน -->
+        <!-- คู่มือการใช้งาน -->
         <section id="manual" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
             <h1 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">
                 📖 คู่มือการใช้งาน n8n Beginner's Guide
@@ -101,23 +93,28 @@
                     ยินดีต้อนรับสู่คู่มือการใช้งานระบบ Workflow Automation ด้วย n8n สำหรับเริ่มต้น คุณสามารถศึกษาเรียนรู้การใช้งาน Node ต่างๆ Triggers และการตรวจสอบการทำงานของระบบได้จากหัวข้อด้านล่างนี้
                 </p>
 
-                <!-- หัวข้อตรวจสอบประวัติการรัน Executions -->
+                <!-- รายการขั้นตอน -->
                 <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-3 mt-6">
                     <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
-                        <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs">4</span>
+                        <span class="w-6 h-6 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold">4</span>
                         การตรวจสอบประวัติการรัน (Executions)
                     </h3>
-                    <ol class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-600 pl-2">
-                        <li>ไปที่เมนู <strong class="text-slate-800">"Executions"</strong> ที่แถบฝั่งซ้ายมือ</li>
-                        <li>ระบบจะแสดงรายการการทำงานทั้งหมดย้อนหลัง สามารถคลิกเลือกดูรายการย่อยเพื่อตรวจสอบค่า Input/Output ของทุก Node ในรอบที่เกิดปัญหาได้อย่างแม่นยำ</li>
-                    </ol>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600 pl-2">
+                        <li class="flex items-start gap-2">
+                            <span class="w-5 h-5 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
+                            <span>ไปที่เมนู <strong class="text-slate-800">"Executions"</strong> ที่แถบฝั่งซ้ายมือ</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-5 h-5 bg-rose-100 text-[#EA4B71] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">6</span>
+                            <span>ระบบจะแสดงรายการการทำงานทั้งหมดย้อนหลัง สามารถคลิกเลือกดูรายการย่อยเพื่อตรวจสอบค่า Input/Output ของทุก Node ในรอบที่เกิดปัญหาได้อย่างแม่นยำ</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
         <p>© 2026 n8n Manual Guide. All rights reserved.</p>
     </footer>
