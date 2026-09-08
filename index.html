@@ -46,16 +46,15 @@
     }
     .top-menu a:hover, .top-menu a.active { color: var(--primary); background-color: var(--light-bg); }
     
-    /* สไตล์ปุ่มกดเปิดตรงไปยังเว็บไซต์ n8n */
+    /* สไตล์ปุ่มลิงก์ Anchor tag สำหรับป้องกัน Security Warning บน Chrome */
     .primary-btn { 
       background-color: var(--primary); 
-      color: #ffffff; 
+      color: #ffffff !important; 
       font-weight: 600; 
       font-size: 0.92rem;
       padding: 0.5rem 1.1rem;
       border-radius: 8px;
-      border: none;
-      outline: none;
+      text-decoration: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -67,9 +66,7 @@
       background-color: var(--primary-hover); 
       transform: translateY(-1px);
       box-shadow: 0 4px 10px rgba(234, 75, 113, 0.35);
-    }
-    .primary-btn:active {
-      transform: translateY(0);
+      color: #ffffff !important;
     }
 
     /* Main Page Layout */
@@ -99,6 +96,37 @@
     .article-badge { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); background: var(--accent-pink); padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem; }
     .article-title { font-size: 2.6rem; font-weight: 800; line-height: 1.25; color: var(--navy); margin-bottom: 0.8rem; }
     .lead-paragraph { font-size: 1.12rem; color: #4a3840; font-weight: 400; line-height: 1.8; margin-bottom: 2.5rem; }
+
+    /* Visual Node Mockup Card Styles */
+    .node-preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin: 1.5rem 0 2rem 0; }
+    .node-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .node-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(234, 75, 113, 0.1); border-color: #f0bcd0; }
+    .node-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem; }
+    .node-icon-box {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; color: #fff; flex-shrink: 0;
+    }
+    .icon-trigger { background: linear-gradient(135deg, #ff6b8b, #ea4b71); }
+    .icon-action { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .icon-logic { background: linear-gradient(135deg, #f6d365, #fda085); }
+    .icon-error { background: linear-gradient(135deg, #ff4b1f, #ff9068); }
+    .node-title-text { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .node-type-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+    .node-body-desc { font-size: 0.82rem; color: #634e56; line-height: 1.4; }
+    
+    /* Port Dots */
+    .node-card::before { content: ''; position: absolute; left: -6px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background: #c5b8bd; border-radius: 50%; border: 2px solid #fff; }
+    .node-card::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background: var(--primary); border-radius: 50%; border: 2px solid #fff; }
+    .node-card.trigger-card::before { display: none; }
 
     .hero-graphic { width: 100%; background: linear-gradient(135deg, #fff0f3 0%, #ffe4e9 100%); border: 1px solid #ffccd5; border-radius: 16px; padding: 2rem; margin-bottom: 3rem; text-align: center; }
     .graphic-workflow { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
@@ -164,12 +192,12 @@
       <li><a id="nav-guide" onclick="switchPage('guide')" class="active">คู่มือการใช้งาน</a></li>
       <li><a id="nav-faq" onclick="switchPage('faq')">คำถามที่พบบ่อย (FAQ)</a></li>
       
-      <!-- ปุ่มเปิดเข้าเว็บตรงข้ามหน้า Security Warning -->
+      <!-- ปุ่มเปิดเข้าเว็บแบบ HTML Anchor Tag มาตรฐานเพื่อเลี่ยง Chrome Security Warning -->
       <li>
-        <button onclick="window.location.href='https://n8n-ai-scaner.web.app/';" class="primary-btn">
+        <a href="https://n8n-ai-scaner.web.app/" target="_blank" rel="noopener noreferrer" class="primary-btn">
           <span>ไปยัง เว็บไซต์ n8n</span>
           <span style="font-size: 1rem; line-height: 1;">➔</span>
-        </button>
+        </a>
       </li>
     </ul>
   </header>
@@ -275,7 +303,32 @@
 
         <!-- ข้อ 5 -->
         <h2 id="guide-sec5">5. เจาะลึกชนิดของ Trigger Node</h2>
-        <p>Trigger คือจุดเริ่มต้นของกระบวนการ แบ่งออกเป็น 4 ประเภทหลักตามลักษณะการเรียกใช้จริง:</p>
+        <p>Trigger คือจุดเริ่มต้นของกระบวนการ มีตัวอย่างหน้าตา Node จริงดังนี้:</p>
+
+        <!-- Node Visual Preview Cards -->
+        <div class="node-preview-grid">
+          <div class="node-card trigger-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-trigger">⚡</div>
+              <div>
+                <div class="node-title-text">Webhook</div>
+                <div class="node-type-label">Trigger Node</div>
+              </div>
+            </div>
+            <div class="node-body-desc">เปิด HTTP Endpoint รับข้อมูล JSON / Binary เข้ามายังระบบ Real-time</div>
+          </div>
+
+          <div class="node-card trigger-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-trigger">🕒</div>
+              <div>
+                <div class="node-title-text">Schedule Trigger</div>
+                <div class="node-type-label">Trigger Node</div>
+              </div>
+            </div>
+            <div class="node-body-desc">กำหนดเวลารันอัตโนมัติ เช่น ทุก 1 ชั่วโมง หรือกำหนดด้วย Cron Expression</div>
+          </div>
+        </div>
 
         <ul class="step-list">
           <li><strong>1. Webhook Trigger:</strong> เปิด HTTP Endpoint รอรับ Request จากภายนอก (GET, POST, PUT, DELETE) รองรับการรับ Body ในรูปแบบ JSON, Form-Data และ Binary File</li>
@@ -286,7 +339,43 @@
 
         <!-- ข้อ 6 -->
         <h2 id="guide-sec6">6. โครงสร้างประเภทของ Action และ Logic Nodes</h2>
-        <p>รายละเอียด Node หลักที่ใช้ประมวลผลภายใน n8n:</p>
+        <p>รายละเอียด Node หลักที่ใช้ประมวลผลข้อมูลและแยกสายงาน:</p>
+
+        <!-- Node Visual Preview Cards -->
+        <div class="node-preview-grid">
+          <div class="node-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-action">✏️</div>
+              <div>
+                <div class="node-title-text">Edit Fields (Set)</div>
+                <div class="node-type-label">Transform Node</div>
+              </div>
+            </div>
+            <div class="node-body-desc">สร้าง ตัด ต่อ เปลี่ยนชื่อ หรือกำหนดค่าของตัวแปรข้อมูล</div>
+          </div>
+
+          <div class="node-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-logic">🔀</div>
+              <div>
+                <div class="node-title-text">If / Switch</div>
+                <div class="node-type-label">Logic Node</div>
+              </div>
+            </div>
+            <div class="node-body-desc">ตรวจสอบเงื่อนไขเพื่อแยกสายการทำงานออกเป็น True/False หรือหลายเส้นทาง</div>
+          </div>
+
+          <div class="node-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-action">💻</div>
+              <div>
+                <div class="node-title-text">Code Node</div>
+                <div class="node-type-label">Advanced Node</div>
+              </div>
+            </div>
+            <div class="node-body-desc">เขียนสคริปต์ JavaScript หรือ Python เพื่อประมวลผลข้อมูลระดับสูง</div>
+          </div>
+        </div>
 
         <ul class="step-list">
           <li><strong>Data Transformation Nodes:</strong>
@@ -344,6 +433,20 @@
         <h2 id="guide-sec9">9. การตั้งเวลาทำงานอัตโนมัติ (Schedule Trigger)</h2>
         <p>ขั้นตอนการสร้างและตั้งค่า Schedule Trigger สำหรับงานที่ต้องทำซ้ำตามเวลา:</p>
 
+        <!-- Node Preview Card -->
+        <div class="node-preview-grid">
+          <div class="node-card trigger-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-trigger">⏰</div>
+              <div>
+                <div class="node-title-text">Schedule Trigger</div>
+                <div class="node-type-label">Interval / Cron</div>
+              </div>
+            </div>
+            <div class="node-body-desc">ตั้งเวลาให้ Workflow รันโดยอัตโนมัติ เช่น ทุกวันจันทร์ 08:30 น.</div>
+          </div>
+        </div>
+
         <ul class="step-list">
           <li>วาง Node <strong>Schedule Trigger</strong> เป็น Node เริ่มต้นบน Canvas</li>
           <li>ในหน้าตั้งค่า กำหนดเงื่อนไขเวลาในแผง <strong>Trigger Interval</strong>:
@@ -359,6 +462,20 @@
         <!-- ข้อ 10 -->
         <h2 id="guide-sec10">10. การจัดการข้อผิดพลาดด้วย Error Trigger (Error Handling)</h2>
         <p>การสร้างระบบแจ้งเตือนฉุกเฉินเมื่อเกิดความขัดข้องใน Production:</p>
+
+        <!-- Node Preview Card -->
+        <div class="node-preview-grid">
+          <div class="node-card trigger-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-error">⚠️</div>
+              <div>
+                <div class="node-title-text">Error Trigger</div>
+                <div class="node-type-label">Global Error Handler</div>
+              </div>
+            </div>
+            <div class="node-body-desc">ดักจับ Error จากทุก Node ใน Workflow แล้วส่งข้อมูลไปยังระบบแจ้งเตือน</div>
+          </div>
+        </div>
 
         <ul class="step-list">
           <li>สร้าง Workflow ใหม่ขึ้นมา 1 ตัว ตั้งชื่อว่า <code>Global-Error-Notifier</code></li>
@@ -382,6 +499,20 @@ Node ล้มเหลว: {{ $json.execution.error.node.name }}
         <!-- ข้อ 11 -->
         <h2 id="guide-sec11">11. การเชื่อมต่อ Webhook รับข้อมูล Real-time</h2>
         <p>การรับข้อมูลแบบ Instant Data Transfer จากภายนอกเข้ามายัง n8n:</p>
+
+        <!-- Node Preview Card -->
+        <div class="node-preview-grid">
+          <div class="node-card trigger-card">
+            <div class="node-header">
+              <div class="node-icon-box icon-trigger">🔗</div>
+              <div>
+                <div class="node-title-text">Webhook</div>
+                <div class="node-type-label">HTTP Listener</div>
+              </div>
+            </div>
+            <div class="node-body-desc">เปิดรับ Request POST/GET จากภายนอกแบบ Real-time พร้อม URL สองโหมด (Test/Production)</div>
+          </div>
+        </div>
 
         <ul class="step-list">
           <li>วาง Node <strong>Webhook</strong> เป็นจุดเริ่มต้น</li>
