@@ -417,6 +417,13 @@
           </div>
         </div>
 
+          <ol class="step-list">
+  <li><strong>Webhook Trigger:</strong> เปิด HTTP Endpoint รอรับ Request จากภายนอก (GET, POST, PUT, DELETE) รองรับการรับ Body ในรูปแบบ JSON, Form-Data และ Binary File</li>
+  <li><strong>Schedule Trigger:</strong> ตั้งเวลาทำงานตามรอบเวลา เช่น ทุก 1 ชั่วโมง, ทุกวันจันทร์เวลา 08:30 น. หรือใช้ Cron Expression แบบกำหนดเอง (เช่น <code>0 8 * * 1-5</code>)</li>
+  <li><strong>App Events Trigger:</strong> คอยดักจับ Event จากบริการภายนอกผ่านการเชื่อมต่อ Webhook อัตโนมัติ เช่น Google Drive Trigger (เมื่อมีไฟล์ใหม่เกิดขึ้น) หรือ Gmail Trigger (เมื่อมีอีเมลใหม่เข้า)</li>
+  <li><strong>Form Trigger:</strong> สร้างเว็บฟอร์มหน้าต่างรับข้อมูลอย่างง่ายจาก n8n โดยตรงเพื่อนำข้อมูลเข้า Workflow ทันที</li>
+</ol>
+        
         <ul class="step-list">
           <li><strong>1. Webhook Trigger:</strong> เปิด HTTP Endpoint รอรับ Request จากภายนอก (GET, POST, PUT, DELETE) รองรับการรับ Body ในรูปแบบ JSON, Form-Data และ Binary File</li>
           <li><strong>2. Schedule Trigger:</strong> ตั้งเวลาทำงานตามรอบเวลา เช่น ทุก 1 ชั่วโมง, ทุกวันจันทร์เวลา 08:30 น. หรือใช้ Cron Expression แบบกำหนดเอง (เช่น <code>0 8 * * 1-5</code>)</li>
