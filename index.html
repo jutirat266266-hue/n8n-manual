@@ -50,74 +50,73 @@
   line-height: inherit !important;
   border-radius: 0 !important;
 }
-    /* Container หลักของ Flow Diagram */
+   /* ---- ตกแต่ง Execution Flow Diagram ใหม่ ---- */
 .flow-diagram-card {
-  background: #fff5f7;
-  border: 1px solid #ffe4e9;
-  border-radius: 16px;
-  padding: 24px;
-  margin: 24px 0;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(234, 75, 113, 0.05);
+  background: #fff5f7 !important;
+  border: 1px solid #ffe4e9 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  margin: 24px 0 !important;
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(234, 75, 113, 0.05) !important;
 }
 
 .flow-diagram-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #1f1118;
-  margin-bottom: 20px;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #1f1118 !important;
+  margin-bottom: 20px !important;
 }
 
 .flow-steps-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
 }
 
 .flow-node {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 10px 18px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #2d1e24;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: all 0.2s ease;
-  white-space: nowrap;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+  padding: 10px 18px !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: #2d1e24 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  white-space: nowrap !important;
 }
 
 .flow-node.active-node {
-  border-color: #ea4b71;
-  color: #ea4b71;
-  box-shadow: 0 0 0 3px rgba(234, 75, 113, 0.12);
+  border-color: #ea4b71 !important;
+  color: #ea4b71 !important;
+  box-shadow: 0 0 0 3px rgba(234, 75, 113, 0.12) !important;
 }
 
 .flow-arrow {
-  color: #ea4b71;
-  font-size: 1.1rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
+  color: #ea4b71 !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* รองรับมือถือ */
+/* รองรับมือถือ ( Responsive ) */
 @media (max-width: 640px) {
   .flow-steps-wrapper {
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: column !important;
+    gap: 8px !important;
   }
   
   .flow-node {
-    width: 100%;
-    max-width: 280px;
+    width: 100% !important;
+    max-width: 280px !important;
   }
   
   .flow-arrow {
-    transform: rotate(90deg);
-    margin: 4px 0;
+    transform: rotate(90deg) !important;
+    margin: 4px 0 !important;
   }
 }
 
@@ -378,18 +377,19 @@
           คู่มือการใช้งาน n8n แบบละเอียดที่สุด รวบรวมเมนูการใช้งาน สถาปัตยกรรมข้อมูล โครงสร้าง JSON วิธีตั้งค่า Expression และสเต็ปการสร้างระบบ Automation แบบครบถ้วน อ่านแล้วทำตามได้ทันที
         </p>
 
-        <div class="hero-graphic">
-          <h3 style="color: var(--navy); font-size: 1.15rem; font-weight: 700;">วงจรชีวิตของระบบ n8n Execution Flow</h3>
-          <div class="graphic-workflow">
-            <div class="graphic-node highlight">1. Event Trigger</div>
-            <div class="graphic-arrow">➔</div>
-            <div class="graphic-node">2. Data Transformation</div>
-            <div class="graphic-arrow">➔</div>
-            <div class="graphic-node">3. External API Call</div>
-            <div class="graphic-arrow">➔</div>
-            <div class="graphic-node">4. Execution Log</div>
-          </div>
-        </div>
+       <div class="flow-diagram-card">
+  <div class="flow-diagram-title">วงจรชีวิตของระบบ n8n Execution Flow</div>
+  
+  <div class="flow-steps-wrapper">
+    <div class="flow-node active-node">1. Event Trigger</div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-node">2. Data Transformation</div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-node">3. External API Call</div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-node">4. Execution Log</div>
+  </div>
+</div>
 
         <!-- ข้อ 1 -->
         <h2 id="guide-sec1">1. n8n คืออะไร? และสถาปัตยกรรมเบื้องหลัง</h2>
