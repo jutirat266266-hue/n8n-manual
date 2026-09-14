@@ -26,6 +26,31 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Sarabun', 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background-color: var(--main-bg); line-height: 1.7; scroll-behavior: smooth; }
 
+    /* แก้ไขให้หัวข้อย่อย sub-bullet ไม่นับเลขเพิ่ม และใช้เครื่องหมายขีด - แทน */
+.step-list .sub-bullet li {
+  list-style-type: none !important;
+  position: relative;
+  padding-left: 1.25rem !important;
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.step-list .sub-bullet li::before {
+  content: "–" !important;
+  counter-increment: none !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto !important;
+  height: auto !important;
+  background-color: transparent !important;
+  color: #6b7280 !important;
+  font-weight: bold;
+  font-size: 0.95rem;
+  line-height: inherit !important;
+  border-radius: 0 !important;
+}
+
     /* Top Navigation Header */
     header.top-nav {
       position: sticky; top: 0; z-index: 100;
@@ -313,21 +338,24 @@
         </div>
 
         <!-- ข้อ 2 -->
-        <h2 id="guide-sec2">2. คำศัพท์ และส่วนประกอบเมนูการใช้งานจริง</h2>
-        <p>การใช้งาน n8n ในหน้า Canvas หลัก ประกอบด้วยเมนูและคำศัพท์ที่ต้องเข้าใจดังนี้:</p>
+<h2 id="guide-sec2">2. คำศัพท์ และส่วนประกอบเมนูการใช้งานจริง</h2>
+<p>การใช้งาน n8n ในหน้า Canvas หลัก ประกอบด้วยเมนูและคำศัพท์ที่ต้องเข้าใจดังนี้:</p>
 
-        <ol class="step-list">
-        <li><strong>Canvas (ผืนผ้าใบ):</strong> พื้นที่ทำงานหลักใช้สำหรับวางและต่อสาย Node มีเครื่องมือ Zoom, Mini-map และ Grid Snap</li>
-        <li><strong>Node Panel (กดปุ่ม +):</strong> แผงค้นหาและเลือกใช้ Node ซึ่งแบ่งหมวดหมู่เป็น Trigger, Action, Logic, AI และ Advanced</li>
-        <li><strong>Input/Output Data View:</strong> หน้าต่างแสดงผลข้อมูลเมื่อดับเบิลคลิกที่ Node สามารถสลับดูได้ 3 รูปแบบ:
-        <ul class="sub-bullet">
-        <li><strong>Table View:</strong> แสดงข้อมูลในรูปแบบตารางเหมือน Excel</li>
-        <li><strong>JSON View:</strong> แสดงโครงสร้าง Code JSON ดั้งเดิม</li>
-        <li><strong>Schema View:</strong> แสดงชื่อ Data Type (String, Number, Boolean, Array)</li>
-        </ul>
-        </li>
-        <li><strong>Credentials Manager:</strong> ระบบจัดการรหัสผ่าน API Key, OAuth2, Bearer Token โดยข้อมูลทั้งหมดจะถูกเข้ารหัสผ่าน <code>N8N_ENCRYPTION_KEY</code> ไว้ในฐานข้อมูล</li>
-        </ol>
+<ol class="step-list">
+  <li><strong>Canvas (ผืนผ้าใบ):</strong> พื้นที่ทำงานหลักใช้สำหรับวางและต่อสาย Node มีเครื่องมือ Zoom, Mini-map และ Grid Snap</li>
+  
+  <li><strong>Node Panel (กดปุ่ม +):</strong> แผงค้นหาและเลือกใช้ Node ซึ่งแบ่งหมวดหมู่เป็น Trigger, Action, Logic, AI และ Advanced</li>
+  
+  <li><strong>Input/Output Data View:</strong> หน้าต่างแสดงผลข้อมูลเมื่อดับเบิลคลิกที่ Node สามารถสลับดูได้ 3 รูปแบบ:
+    <ul class="sub-bullet">
+      <li><strong>Table View:</strong> แสดงข้อมูลในรูปแบบตารางเหมือน Excel</li>
+      <li><strong>JSON View:</strong> แสดงโครงสร้าง Code JSON ดั้งเดิม</li>
+      <li><strong>Schema View:</strong> แสดงชื่อ Data Type (String, Number, Boolean, Array)</li>
+    </ul>
+  </li>
+  
+  <li><strong>Credentials Manager:</strong> ระบบจัดการรหัสผ่าน API Key, OAuth2, Bearer Token โดยข้อมูลทั้งหมดจะถูกเข้ารหัสผ่าน <code>N8N_ENCRYPTION_KEY</code> ไว้ในฐานข้อมูล</li>
+</ol>
 
         <!-- ข้อ 3 -->
         <h2 id="guide-sec3">3. การเริ่มต้นใช้งานและการตั้งค่า Workspace</h2>
