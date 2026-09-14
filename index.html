@@ -807,21 +807,21 @@ Node ล้มเหลว: {{ $json.execution.error.node.name }}
     }
 
     // ฟังก์ชันสลับหน้าหลัก (เมนูด้านบน)
-    function switchPage(pageKey) {
-      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(`page-${pageKey}`).classList.add('active');
+function switchPage(pageKey) {
+  document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(`page-${pageKey}`).classList.add('active');
 
-      document.querySelectorAll('.top-menu a').forEach(a => a.classList.remove('active'));
-      document.querySelectorAll('.mobile-dropdown a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.top-menu a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.mobile-dropdown a').forEach(a => a.classList.remove('active'));
 
-      const activeNav = document.getElementById(`nav-${pageKey}`);
-      const activeMobNav = document.getElementById(`mob-nav-${pageKey}`);
-      
-      if (activeNav) activeNav.classList.add('active');
-      if (activeMobNav) activeMobNav.classList.add('active');
+  const activeNav = document.getElementById(`nav-${pageKey}`);
+  const activeMobNav = document.getElementById(`mob-nav-${pageKey}`);
 
-      renderSidebar(pageKey);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (activeNav) activeNav.classList.add('active');
+  if (activeMobNav) activeMobNav.classList.add('active');
+
+  renderSidebar(pageKey);
+    //  window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // ฟังก์ชันเจนรายการสารบัญฝั่งซ้ายตามหน้าปัจจุบัน
