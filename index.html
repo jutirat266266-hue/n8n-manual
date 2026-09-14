@@ -176,19 +176,22 @@
     }
     .mobile-menu-toggle:focus { background-color: var(--light-bg); }
 
-    /* Dropdown Menu บนมือถือ */
-    .mobile-dropdown {
-      display: none;
-      position: absolute;
-      top: 70px; left: 0; right: 0;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      padding: 1rem;
-      flex-direction: column;
-      gap: 0.5rem;
-      z-index: 99;
-    }
+   .mobile-dropdown {
+  display: none;
+  position: fixed; /* <-- เปลี่ยนจาก absolute เป็น fixed */
+  top: 70px; 
+  left: 0; 
+  right: 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 9999; /* <-- เพิ่ม z-index ให้ลอยทับทุกอย่าง */
+  max-height: calc(100vh - 70px); /* ป้องกันเมนียาวเกินจอ ให้ไถดูในเมนูได้ */
+  overflow-y: auto;
+}
     .mobile-dropdown.open { display: flex; }
     .mobile-dropdown a {
       text-decoration: none;
