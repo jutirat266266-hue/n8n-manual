@@ -208,7 +208,7 @@
       aside.left-sidebar { display: none; }
       main.content-area { padding: 2rem 1.2rem; }
       .top-menu { display: none; }
-      .mobile-menu-toggle { display: block; } /* แสดงปุ่ม 3 ขีดบนมือถือ */
+      .mobile-menu-toggle { display: block; }
       .article-title { font-size: 1.9rem; }
     }
   </style>
@@ -218,7 +218,6 @@
   <!-- Top Navigation Header -->
   <header class="top-nav">
     <div onclick="switchPage('guide')" class="brand-logo">
-      <!-- n8n Official Color Logo SVG -->
       <svg viewBox="0 0 230 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M23.5 45.5C28.4706 45.5 32.5 41.4706 32.5 36.5C32.5 31.5294 28.4706 27.5 23.5 27.5C14.5 41.4706 18.5294 45.5 23.5 45.5Z" stroke="#ea4b71" stroke-width="6"/>
         <path d="M57.5 45.5C62.4706 45.5 66.5 41.4706 66.5 36.5C66.5 31.5294 62.4706 27.5 57.5 27.5C52.5294 27.5 48.5 31.5294 48.5 36.5C48.5 41.4706 52.5294 45.5 57.5 45.5Z" stroke="#ea4b71" stroke-width="6"/>
@@ -577,114 +576,101 @@ Node ล้มเหลว: {{ $json.execution.error.node.name }}
           <li>กดปุ่ม <strong>"Listen for test event"</strong> ใน n8n แล้วกดสั่งส่งข้อมูลจากต้นทางเข้ามา</li>
           <li>เมื่อ n8n แสดงข้อมูลที่รับได้บนหน้าจอ ให้สลับนำลิงก์ในช่อง <strong>Production URL</strong> ไปใส่ในระบบจริง</li>
         </ul>
-
-        <div class="callout-box warning">
-          <p>⚠️ <strong>ข้อควรระวัง:</strong> ลิงก์ Test URL จะทำงานเฉพาะตอนที่เราเปิดฟังในหน้าจอ Test เท่านั้น แต่ในการใช้งานจริงตลอด 24 ชั่วโมง <strong>ต้องใช้ Production URL และกดเปิด Active Workflow เท่านั้น</strong></p>
-        </div>
-
-        <!-- ข้อ 12 -->
-        <h2 id="guide-sec12">12. การเปิดใช้งานจริงและการจัดการประวัติ (Active & Executions)</h2>
-        <p>ขั้นตอนสุดท้ายสำหรับการส่ง Workflow ขึ้นทำงานจริงใน Production:</p>
-
-        <ul class="step-list">
-          <li>ตรวจสอบสายงานและเปลี่ยน URL เชื่อมต่อภายนอกเป็นเวอร์ชัน Production</li>
-          <li>สังเกตสวิตช์มุมขวาบนของ Canvas สลับจาก <code>Inactive</code> เป็น <strong>"Active" (เปลี่ยนเป็นสีชมพู/เขียว)</strong></li>
-          <li>กดปุ่ม <strong>Save</strong> (Ctrl+S / Cmd+S)</li>
-          <li><strong>การตรวจสอบประวัติการรัน (Executions):</strong>
-            <ul class="sub-bullet">
-              <li>ไปที่เมนู <strong>"Executions"</strong> ที่แถบฝั่งซ้ายมือ</li>
-              <li>ระบบจะแสดงรายการการทำงานทั้งหมดย้อนหลัง สามารถคลิกเลือกดูรายการย่อยเพื่อตรวจสอบค่า Input/Output ของทุก Node ในรอบที่เกิดปัญหาได้อย่างแม่นยำ</li>
-            </ul>
-          </li>
-        </ul>
-
       </section>
 
       <!-- PAGE 2: เกี่ยวกับ n8n -->
       <section id="page-about" class="page-section">
-        <span class="article-badge">Overview</span>
-        <h1 class="article-title">เกี่ยวกับ n8n (Core Concepts)</h1>
-        <p class="lead-paragraph">แนวคิด สถาปัตยกรรมระบบ และข้อได้เปรียบทางเทคนิคของ n8n</p>
+        <span class="article-badge">About Framework</span>
+        <h1 class="article-title">เกี่ยวกับ n8n</h1>
+        <p class="lead-paragraph">ทำความรู้จักกับแพลตฟอร์ม Workflow Automation ระดับองค์กรที่เติบโตรวดเร็วที่สุดในโลก</p>
         
-        <h2 id="about-sec1">1. สถาปัตยกรรมของ n8n</h2>
-        <p>n8n ถูกพัฒนาบนภาษา TypeScript และ Node.js เพื่อประสิทธิภาพความเร็วสูงสุด การประมวลผลเน้นโครงสร้างแบบ Asynchronous Event-driven ช่วยให้รองรับการเชื่อมต่อ API หลายร้อยรายการพร้อมกันได้ดี</p>
+        <h2>สถาปัตยกรรมแบบ Fair-code</h2>
+        <p>n8n ถูกออกแบบมาโดยยึดหลักความเป็นส่วนตัวของข้อมูลเป็นหลัก (Privacy-First) ซึ่งต่างจากโซลูชันแบบ SaaS อื่นๆ ในตลาดที่นำข้อมูลของผู้ใช้ไปผ่านเซิร์ฟเวอร์คนกลาง</p>
         
-        <h2 id="about-sec2">2. ข้อได้เปรียบเชิงเทคนิค</h2>
-        <ul class="step-list">
-          <li><strong>Self-Hosted Infrastructure:</strong> สามารถติดตั้งบน Docker, Kubernetes หรือ Virtual Private Server (VPS) ได้อิสระ ควบคุมความเป็นส่วนตัวของข้อมูลได้ 100%</li>
-          <li><strong>No Execution Limits:</strong> สำหรับเวอร์ชัน Self-hosted จะไม่มีการจำกัดจำนวนการประมวลผล (Unlimited Workflow Executions)</li>
-          <li><strong>Full Extensibility:</strong> รองรับการเขียน JavaScript/Python เพิ่มเติมภายใน Code Node รวมถึงการสร้าง Custom Node ขึ้นใช้งานเอง</li>
-        </ul>
+        <div class="callout-box">
+          <p>🔒 <strong>ความปลอดภัยข้อมูลสูงสุด:</strong> ข้อมูล ความลับ Credentials และไฟล์ระบบ จะถูกจัดเก็บอยู่ในระบบ Infrastructure ของคุณเอง 100%</p>
+        </div>
       </section>
 
       <!-- PAGE 3: วิธีติดตั้ง -->
       <section id="page-install" class="page-section">
-        <span class="article-badge">Installation</span>
-        <h1 class="article-title">วิธีติดตั้ง n8n บนเซิร์ฟเวอร์และคอมพิวเตอร์</h1>
-        <p class="lead-paragraph">คำสั่งติดตั้งอ้างอิงตามมาตรฐาน Official Documentation</p>
+        <span class="article-badge">Deployment Guide</span>
+        <h1 class="article-title">วิธีติดตั้ง n8n บนเซิร์ฟเวอร์</h1>
+        <p class="lead-paragraph">วิธีการติดตั้ง n8n ผ่าน Docker Desktop และ Docker Compose แบบง่ายที่สุด</p>
+
+        <h2>ติดตั้งด้วย Docker Command</h2>
+        <p>เปิด Terminal หรือ Command Prompt แล้วรันคำสั่งต่อไปนี้:</p>
         
-        <h2 id="install-sec1">1. การติดตั้งผ่าน Docker Container (แนะนำสำหรับการใช้งานจริง)</h2>
-        <p>รันคำสั่ง Docker เพื่อสร้าง Container ของ n8n บนพอร์ต 5678 พร้อมผูก Volume สำหรับเก็บข้อมูลระบบ:</p>
-        <div class="code-block">docker run -d \
-  --name n8n \
-  -p 5678:5678 \
-  -v n8n_data:/home/node/.n8n \
-  docker.n8n.io/n8nio/n8n</div>
-        
-        <h2 id="install-sec2">2. การติดตั้งผ่าน npx (สำหรับทดสอบด่วน)</h2>
-        <p>สำหรับเครื่องที่มี Node.js (v18.x ขึ้นไป) และต้องการทดสอบใช้งานทันที:</p>
-        <div class="code-block">npx n8n start</div>
+        <div class="code-block">docker run -d --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n n8nio/n8n</div>
       </section>
 
-      <!-- PAGE 4: คำถามที่พบบ่อย (FAQ) -->
+      <!-- PAGE 4: FAQ -->
       <section id="page-faq" class="page-section">
-        <span class="article-badge">FAQ</span>
+        <span class="article-badge">Frequently Asked Questions</span>
         <h1 class="article-title">คำถามที่พบบ่อย (FAQ)</h1>
-        <p class="lead-paragraph">ตอบข้อสงสัยยอดฮิตเกี่ยวกับการใช้งาน n8n</p>
+        <p.lead-paragraph>รวมข้อสงสัยทั่วไปในการใช้งาน n8n</p>
 
-        <h2 id="faq-sec1">1. n8n สามารถประมวลผลไฟล์ภาพ หรือ PDF ได้ไหม?</h2>
-        <p>ตอบ: ได้อย่างสมบูรณ์แบบ n8n มีระบบจัดการข้อมูลไฟล์ผ่านคีย์ <code>binary</code> สามารถรับไฟล์จาก Webhook, Google Drive หรือ HTTP Request เพื่อนำไปประมวลผลต่อ เช่น ส่งเข้า AI หรือทำระบบ OCR ได้</p>
-        
-        <h2 id="faq-sec2">2. ถ้าฐานข้อมูล Execution เก็บเยอะเกินไป จะลบอัตโนมัติได้ไหม?</h2>
-        <p>ตอบ: ได้ n8n มีระบบ Data Pruning โดยตั้งค่า Environment Variables เช่น <code>EXECUTIONS_DATA_PRUNE=true</code> และ <code>EXECUTIONS_DATA_MAX_AGE=168</code> (เพื่อลบประวัติที่เก่าเกิน 7 วันอัตโนมัติ)</p>
+        <h2>1. n8n ใช้งานฟรีหรือไม่?</h2>
+        <p>n8n อนุญาตให้ดาวน์โหลดและติดตั้งใช้งานแบบ Self-Hosted ได้ฟรี สำหรับการใช้งานภายในองค์กรส่วนตัวและการพัฒนาทั่วไป</p>
       </section>
 
     </main>
-
   </div>
 
+  <!-- JavaScript สำหรับการเปลี่ยนหน้า และสร้างสารบัญอัตโนมัติ -->
   <script>
-    // รายการสารบัญหัวข้อใหญ่ของแต่ละหน้า
-    const pageSidebars = {
-      guide: [
-        { id: 'guide-sec1', title: '1. n8n คืออะไร? & สถาปัตยกรรม' },
-        { id: 'guide-sec2', title: '2. คำศัพท์ & ส่วนประกอบเมนู' },
-        { id: 'guide-sec3', title: '3. เริ่มต้นใช้งาน Workspace' },
-        { id: 'guide-sec4', title: '4. สร้าง Workflow แรก (Step-by-Step)' },
-        { id: 'guide-sec5', title: '5. เจาะลึกชนิด Trigger Node' },
-        { id: 'guide-sec6', title: '6. โครงสร้าง Action & Logic Node' },
-        { id: 'guide-sec7', title: '7. การแมปข้อมูล & Expression' },
-        { id: 'guide-sec8', title: '8. วิธีทดสอบ & ตรวจ Error' },
-        { id: 'guide-sec9', title: '9. การตั้งเวลาอัตโนมัติ' },
-        { id: 'guide-sec10', title: '10. ระบบ Error Handling' },
-        { id: 'guide-sec11', title: '11. การเชื่อมต่อ Webhook Node' },
-        { id: 'guide-sec12', title: '12. การเปิดใช้งานจริง (Active)' }
-      ],
-      about: [
-        { id: 'about-sec1', title: '1. สถาปัตยกรรมของ n8n' },
-        { id: 'about-sec2', title: '2. ข้อได้เปรียบทางเทคนิค' }
-      ],
-      install: [
-        { id: 'install-sec1', title: '1. ติดตั้งผ่าน Docker' },
-        { id: 'install-sec2', title: '2. ติดตั้งผ่าน npx' }
-      ],
-      faq: [
-        { id: 'faq-sec1', title: '1. การประมวลผลไฟล์และ PDF' },
-        { id: 'faq-sec2', title: '2. การจัดการฐานข้อมูล Execution' }
-      ]
-    };
+    function switchPage(pageId) {
+      // ซ่อนหน้าทั้งหมด
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active'));
 
-    // Script สลับการซ่อน/แสดง Mobile Menu
+      // เคลียร์สถานะเมนู Topbar
+      const topLinks = document.querySelectorAll('.top-menu a, .mobile-dropdown a');
+      topLinks.forEach(link => link.classList.remove('active'));
+
+      // เปิดหน้าที่เลือก
+      const activeSection = document.getElementById('page-' + pageId);
+      if (activeSection) {
+        activeSection.classList.add('active');
+      }
+
+      // ใส่ class active ให้เมนูที่ตรงกัน
+      const activeNav = document.getElementById('nav-' + pageId);
+      if (activeNav) activeNav.classList.add('active');
+      const activeMobNav = document.getElementById('mob-nav-' + pageId);
+      if (activeMobNav) activeMobNav.classList.add('active');
+
+      // เลื่อนขึ้นบนสุด
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // สร้างสารบัญใหม่ตามหน้านั้นๆ
+      buildSidebarMenu();
+    }
+
+    function buildSidebarMenu() {
+      const sidebarMenu = document.getElementById('sidebar-menu');
+      sidebarMenu.innerHTML = '';
+
+      const activeSection = document.querySelector('.page-section.active');
+      if (!activeSection) return;
+
+      const headings = activeSection.querySelectorAll('h2');
+      headings.forEach((h2, index) => {
+        if (!h2.id) {
+          h2.id = 'heading-auto-' + index;
+        }
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.textContent = h2.textContent;
+        a.onclick = () => {
+          h2.scrollIntoView({ behavior: 'smooth' });
+        };
+        li.appendChild(a);
+        sidebarMenu.appendChild(li);
+      });
+    }
+
+    // Toggle Mobile Menu
     const mobileToggleBtn = document.getElementById('mobile-toggle-btn');
     const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
 
@@ -696,57 +682,10 @@ Node ล้มเหลว: {{ $json.execution.error.node.name }}
       mobileDropdownMenu.classList.remove('open');
     }
 
-    // ฟังก์ชันสลับหน้าหลัก (เมนูด้านบน)
-    function switchPage(pageKey) {
-      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(`page-${pageKey}`).classList.add('active');
-
-      document.querySelectorAll('.top-menu a').forEach(a => a.classList.remove('active'));
-      document.querySelectorAll('.mobile-dropdown a').forEach(a => a.classList.remove('active'));
-
-      const activeNav = document.getElementById(`nav-${pageKey}`);
-      const activeMobNav = document.getElementById(`mob-nav-${pageKey}`);
-      
-      if (activeNav) activeNav.classList.add('active');
-      if (activeMobNav) activeMobNav.classList.add('active');
-
-      renderSidebar(pageKey);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // ฟังก์ชันเจนรายการสารบัญฝั่งซ้ายตามหน้าปัจจุบัน
-    function renderSidebar(pageKey) {
-      const sidebarContainer = document.getElementById('sidebar-menu');
-      sidebarContainer.innerHTML = '';
-
-      const items = pageSidebars[pageKey] || [];
-      items.forEach((item, index) => {
-        const li = document.createElement('li');
-        if (index === 0) li.classList.add('active');
-        
-        const a = document.createElement('a');
-        a.innerText = item.title;
-        a.onclick = () => scrollToSection(item.id, li);
-        
-        li.appendChild(a);
-        sidebarContainer.appendChild(li);
-      });
-    }
-
-    // ฟังก์ชันเลื่อนวาร์ปไปยังหัวข้อเมื่อกดคลิกแถบข้างๆ
-    function scrollToSection(sectionId, elementLi) {
-      document.querySelectorAll('#sidebar-menu li').forEach(li => li.classList.remove('active'));
-      elementLi.classList.add('active');
-
-      const target = document.getElementById(sectionId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // เริ่มต้นแสดงผลหน้าคู่มือการใช้งาน
-    switchPage('guide');
+    // เรียกสร้างสารบัญครั้งแรกเมื่อโหลดหน้าเว็บ
+    window.addEventListener('DOMContentLoaded', () => {
+      buildSidebarMenu();
+    });
   </script>
-
 </body>
 </html>
