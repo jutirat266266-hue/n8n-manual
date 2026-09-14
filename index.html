@@ -391,34 +391,35 @@
   </div>
 </div>
 
-        <!-- ข้อ 1 -->
+         <!-- ข้อ 1 -->
+
         <h2 id="guide-sec1">1. n8n คืออะไร? และสถาปัตยกรรมเบื้องหลัง</h2>
+
         <p><strong>n8n (nodemation)</strong> คือระบบ Workflow Automation แบบ Node-based บนสถาปัตยกรรม Fair-code / Open-source ที่ขับเคลื่อนด้วย <strong>Node.js</strong> และ <strong>TypeScript</strong> ทำหน้าที่เป็นศูนย์กลางเชื่อมโยงแอปพลิเคชันหรือ API ต่างๆ เข้าด้วยกัน</p>
+
         
+
         <h3>คุณสมบัติเชิงเทคนิคที่สำคัญ:</h3>
+
         <ul class="sub-bullet">
+
           <li><strong>Data Stream Format:</strong> ข้อมูลที่ไหลผ่าน n8n จะอยู่ในรูปแบบของ <strong>Array of Objects</strong> เสมอ โดยแต่ละ Object เรียกว่า <strong>Item</strong> และแต่ละ Item จะประกอบด้วยคีย์หลักคือ <code>json</code> (สำหรับข้อมูล Text/Number/Boolean) และ <code>binary</code> (สำหรับไฟล์ภาพ/PDF/Zip)</li>
+
           <li><strong>Self-Hosted Data Control:</strong> เมื่อติดตั้ง n8n บนเซิร์ฟเวอร์ส่วนตัว ข้อมูลทั้งหมดจะถูกประมวลผลอยู่ภายใน RAM/Database ของระบบคุณเองโดยไม่ผ่าน Cloud เซิร์ฟเวอร์ภายนอก</li>
+
           <li><strong>Execution Modes:</strong> รองรับการทำงานทั้งแบบ Single Process และ Scaling Mode ผ่าน Worker Container ร่วมกับ Redis และ PostgreSQL</li>
+
         </ul>
 
+
+
         <div class="callout-box">
+
           <p>💡 <strong>โครงสร้างข้อมูลพื้นฐานที่ n8n มองเห็น:</strong><br>
+
           <code>[ { "json": { "id": 1, "name": "Ta" } }, { "json": { "id": 2, "name": "CMG" } } ]</code></p>
+
         </div>
-        <div class="flow-diagram-card">
-  <div class="flow-diagram-title">วงจรชีวิตของระบบ n8n Execution Flow</div>
-  
-  <div class="flow-steps-wrapper">
-    <div class="flow-node active-node">1. Event Trigger</div>
-    <div class="flow-arrow">➔</div>
-    <div class="flow-node">2. Data Transformation</div>
-    <div class="flow-arrow">➔</div>
-    <div class="flow-node">3. External API Call</div>
-    <div class="flow-arrow">➔</div>
-    <div class="flow-node">4. Execution Log</div>
-  </div>
-</div>
         <!-- ข้อ 2 -->
 <h2 id="guide-sec2">2. คำศัพท์ และส่วนประกอบเมนูการใช้งานจริง</h2>
 <p>การใช้งาน n8n ในหน้า Canvas หลัก ประกอบด้วยเมนูและคำศัพท์ที่ต้องเข้าใจดังนี้:</p>
